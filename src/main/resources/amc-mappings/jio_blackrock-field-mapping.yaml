@@ -1,0 +1,307 @@
+# Jio BlackRock Common Application Form — AcroForm Field Mapping
+# Field names verified via PdfFieldExtractorUtil on actual template PDF.
+amcName: JIO_BLACKROCK
+pdfTemplatePath: classpath:forms/JIO_BLACKROCK/fresh_purchase.pdf
+
+fieldMappings:
+
+  # ── Distributor / RIA ────────────────────────────────────────────────────────
+  distributorArn:
+    investorFieldPath: distributorArn
+    pdfFieldName: "RIA / PMRN CODE#"
+    fieldType: TEXT
+
+  # ── Primary Applicant ────────────────────────────────────────────────────────
+  firstName:
+    investorFieldPath: firstName
+    pdfFieldName: "1st Applicant Name"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  pan:
+    investorFieldPath: pan
+    pdfFieldName: "PAN / PEKRN1"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  kycNumber:
+    investorFieldPath: kycNumber
+    pdfFieldName: "CKYC KIN No"
+    fieldType: TEXT
+
+  dateOfBirth:
+    investorFieldPath: dateOfBirth
+    pdfFieldName: "DOB"
+    fieldType: TEXT
+    formatter: DATE_DD_MM_YYYY
+
+  mobile:
+    investorFieldPath: mobile
+    pdfFieldName: "Mobile No"
+    fieldType: TEXT
+
+  email:
+    investorFieldPath: email
+    pdfFieldName: "Email ID"
+    fieldType: TEXT
+
+  # ── Guardian (for Minor investors) ──────────────────────────────────────────
+  guardianName:
+    investorFieldPath: guardianName
+    pdfFieldName: "Name of Guardian"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  # ── Status of 1st Applicant ──────────────────────────────────────────────────
+  statusIndividual:
+    investorFieldPath: status
+    pdfFieldName: "Resident Individual"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "INDIVIDUAL"
+
+  statusMinor:
+    investorFieldPath: status
+    pdfFieldName: "Minor"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "MINOR"
+
+  statusNriNre:
+    investorFieldPath: status
+    pdfFieldName: "NRINRE"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "NRI"
+
+  statusHuf:
+    investorFieldPath: status
+    pdfFieldName: "undefined"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "HUF"
+
+  statusCorporate:
+    investorFieldPath: status
+    pdfFieldName: "Public Ltd Co"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "BODY_CORPORATE"
+
+  # ── Correspondence Address ───────────────────────────────────────────────────
+  addressLine1:
+    investorFieldPath: correspondenceAddress.line1
+    pdfFieldName: "CORRESPONDENCE"
+    fieldType: TEXT
+
+  addressLine2:
+    investorFieldPath: correspondenceAddress.line2
+    pdfFieldName: "CORRESPONDENCE1"
+    fieldType: TEXT
+
+  city:
+    investorFieldPath: correspondenceAddress.city
+    pdfFieldName: "City"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  state:
+    investorFieldPath: correspondenceAddress.state
+    pdfFieldName: "State"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  country:
+    investorFieldPath: correspondenceAddress.country
+    pdfFieldName: "Country"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  pinCode:
+    investorFieldPath: correspondenceAddress.pinCode
+    pdfFieldName: "Pincode"
+    fieldType: TEXT
+
+  # ── Bank Account (Pay-Out) Details ───────────────────────────────────────────
+  bankName:
+    investorFieldPath: bankDetails.bankName
+    pdfFieldName: "Bank Name"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  accountNumber:
+    investorFieldPath: bankDetails.accountNumber
+    pdfFieldName: "Account No"
+    fieldType: TEXT
+
+  ifscCode:
+    investorFieldPath: bankDetails.ifscCode
+    pdfFieldName: "11 Digit IFSC"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  branchName:
+    investorFieldPath: bankDetails.branchName
+    pdfFieldName: "Branch City"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  accountTypeSavings:
+    investorFieldPath: bankDetails.accountType
+    pdfFieldName: "Savings"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "SAVINGS"
+
+  accountTypeCurrent:
+    investorFieldPath: bankDetails.accountType
+    pdfFieldName: "Current"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "CURRENT"
+
+  accountTypeNre:
+    investorFieldPath: bankDetails.accountType
+    pdfFieldName: "NRE"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "NRE"
+
+  accountTypeNro:
+    investorFieldPath: bankDetails.accountType
+    pdfFieldName: "NRO"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "NRO"
+
+  accountTypeFcnr:
+    investorFieldPath: bankDetails.accountType
+    pdfFieldName: "FCNR"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "FCNR"
+
+  # ── Investment & Payment Details ─────────────────────────────────────────────
+  schemeName:
+    investorFieldPath: investmentDetails.schemeName
+    pdfFieldName: "Scheme Name1"
+    fieldType: TEXT
+
+  amount:
+    investorFieldPath: paymentDetails.amount
+    pdfFieldName: "Investment Amount"
+    fieldType: AMOUNT
+    formatter: AMOUNT_IN_FIGURES
+
+  paymentCheque:
+    investorFieldPath: paymentDetails.paymentMode
+    pdfFieldName: "Cheque"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "CHEQUE"
+
+  paymentNeft:
+    investorFieldPath: paymentDetails.paymentMode
+    pdfFieldName: "NEFT  RTGS"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "NEFT"
+
+  paymentRtgs:
+    investorFieldPath: paymentDetails.paymentMode
+    pdfFieldName: "NEFT  RTGS"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "RTGS"
+
+  paymentUpi:
+    investorFieldPath: paymentDetails.paymentMode
+    pdfFieldName: "UPI"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "UPI"
+
+  chequeOrDdNumber:
+    investorFieldPath: paymentDetails.chequeOrDdNumber
+    pdfFieldName: "Cheque1"
+    fieldType: TEXT
+
+  chequeOrDdDate:
+    investorFieldPath: paymentDetails.chequeOrDdDate
+    pdfFieldName: "DATE1"
+    fieldType: TEXT
+    formatter: DATE_DD_MM_YYYY
+
+  # ── Mode of Holding ──────────────────────────────────────────────────────────
+  holdingSingle:
+    investorFieldPath: modeOfHolding
+    pdfFieldName: "mo"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "SINGLE"
+
+  holdingJoint:
+    investorFieldPath: modeOfHolding
+    pdfFieldName: "mo1"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "JOINT"
+
+  holdingAnyone:
+    investorFieldPath: modeOfHolding
+    pdfFieldName: "mo2"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "ANYONE_OR_SURVIVOR"
+
+  # ── Joint Applicant 1 (2nd Applicant) ────────────────────────────────────────
+  joint1Name:
+    investorFieldPath: "jointApplicants[0].firstName"
+    pdfFieldName: "2nd Applicant Name"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  joint1Pan:
+    investorFieldPath: "jointApplicants[0].pan"
+    pdfFieldName: "PAN / PEKRN3"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  joint1Dob:
+    investorFieldPath: "jointApplicants[0].dateOfBirth"
+    pdfFieldName: "DOB2"
+    fieldType: TEXT
+    formatter: DATE_DD_MM_YYYY
+
+  # ── Joint Applicant 2 (3rd Applicant) ────────────────────────────────────────
+  joint2Name:
+    investorFieldPath: "jointApplicants[1].firstName"
+    pdfFieldName: "3rd Applicant Name"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  joint2Pan:
+    investorFieldPath: "jointApplicants[1].pan"
+    pdfFieldName: "PAN 2"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  joint2Dob:
+    investorFieldPath: "jointApplicants[1].dateOfBirth"
+    pdfFieldName: "DOB3"
+    fieldType: TEXT
+    formatter: DATE_DD_MM_YYYY
+
+  # ── Unit Holding Option ───────────────────────────────────────────────────────
+  unitHoldingPhysical:
+    investorFieldPath: unitHoldingOption
+    pdfFieldName: "Physical Mode Default"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "PHYSICAL"
+
+  # ── Nominee 1 ─────────────────────────────────────────────────────────────────
+  nominee1Name:
+    investorFieldPath: "nominees[0].nomineeName"
+    pdfFieldName: "Nominee*"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  nominee1Allocation:
+    investorFieldPath: "nominees[0].allocationPercentage"
+    pdfFieldName: "Share"
+    fieldType: TEXT
+
+  nominee1Dob:
+    investorFieldPath: "nominees[0].dateOfBirth"
+    pdfFieldName: "date nominee@"
+    fieldType: TEXT
+    formatter: DATE_DD_MM_YYYY
+
+  nominee1Guardian:
+    investorFieldPath: "nominees[0].guardianName"
+    pdfFieldName: "NOMINATION Guardian Name"
+    fieldType: TEXT
+    formatter: UPPER_CASE

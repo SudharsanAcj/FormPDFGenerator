@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum AmcName {
     BLACKROCK("BLACKROCK", "DSP BlackRock"),
+    JIO_BLACKROCK("JIO_BLACKROCK", "Jio BlackRock Mutual Fund"),
     HDFC("HDFC", "HDFC Mutual Fund"),
     SBI("SBI", "SBI Mutual Fund"),
     ICICI("ICICI", "ICICI Prudential"),
