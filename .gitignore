@@ -1,0 +1,21 @@
+# Build output
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+nohup.out
+
+# Secrets (real keystores — dev keystore is safe to commit)
+*.p12
+!src/main/resources/dev/dev-keystore.p12
+*.jks
+*.pem
+.env

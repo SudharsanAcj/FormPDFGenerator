@@ -1,0 +1,430 @@
+# DSP BlackRock FTP Fresh Purchase Form — AcroForm Field Mapping
+# Field names verified via PdfDiagnosticFillUtil on actual template PDF.
+amcName: BLACKROCK
+pdfTemplatePath: classpath:forms/BLACKROCK/fresh_purchase.pdf
+
+fieldMappings:
+
+  # ── Distributor / ARN ───────────────────────────────────────────────────────
+  distributorArn:
+    investorFieldPath: distributorArn
+    pdfFieldName: "Text4"
+    fieldType: TEXT
+
+  subBrokerCode:
+    investorFieldPath: subBrokerCode
+    pdfFieldName: "Text5"
+    fieldType: TEXT
+
+  euin:
+    investorFieldPath: euin
+    pdfFieldName: "Text6"
+    fieldType: TEXT
+
+  # ── Transaction Type ────────────────────────────────────────────────────────
+  # Both Check Box76 and Check Box77 render at the "Existing Investor" visual position.
+  # Check Box76=Yes for EXISTING_INVESTOR shows Existing Investor ticked (correct).
+  # For FIRST_TIME_INVESTOR, neither box is ticked — the left-side FTI checkbox has no AcroForm field.
+  transactionExisting:
+    investorFieldPath: transactionChargeType
+    pdfFieldName: "Check Box76"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "EXISTING_INVESTOR"
+
+  # ── Applicant Status ────────────────────────────────────────────────────────
+  statusIndividual:
+    investorFieldPath: status
+    pdfFieldName: "Check Box78"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "INDIVIDUAL"
+
+  statusHuf:
+    investorFieldPath: status
+    pdfFieldName: "Check Box79"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "HUF"
+
+  statusMinor:
+    investorFieldPath: status
+    pdfFieldName: "Check Box80"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "MINOR"
+
+  statusNri:
+    investorFieldPath: status
+    pdfFieldName: "Check Box81"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "NRI"
+
+  statusCorporate:
+    investorFieldPath: status
+    pdfFieldName: "Check Box82"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "BODY_CORPORATE"
+
+  # ── Applicant Name ──────────────────────────────────────────────────────────
+  firstName:
+    investorFieldPath: firstName
+    pdfFieldName: "Text7"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  # ── Title ────────────────────────────────────────────────────────────────────
+  titleMr:
+    investorFieldPath: title
+    pdfFieldName: "Check Box83"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "MR"
+
+  titleMrs:
+    investorFieldPath: title
+    pdfFieldName: "Check Box84"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "MRS"
+
+  titleMs:
+    investorFieldPath: title
+    pdfFieldName: "Check Box85"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "MS"
+
+  titleDr:
+    investorFieldPath: title
+    pdfFieldName: "Check Box86"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "DR"
+
+  # ── Date of Birth (single text field DD/MM/YYYY) ────────────────────────────
+  dateOfBirth:
+    investorFieldPath: dateOfBirth
+    pdfFieldName: "Text9"
+    fieldType: TEXT
+    formatter: DATE_DD_MM_YYYY
+
+  # ── PAN ──────────────────────────────────────────────────────────────────────
+  pan:
+    investorFieldPath: pan
+    pdfFieldName: "Text10"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  # ── Gender ───────────────────────────────────────────────────────────────────
+  genderMale:
+    investorFieldPath: gender
+    pdfFieldName: "Check Box87"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "MALE"
+
+  genderFemale:
+    investorFieldPath: gender
+    pdfFieldName: "Check Box88"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "FEMALE"
+
+  genderTransgender:
+    investorFieldPath: gender
+    pdfFieldName: "Check Box89"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "TRANSGENDER"
+
+  # ── KYC ──────────────────────────────────────────────────────────────────────
+  kycNumber:
+    investorFieldPath: kycNumber
+    pdfFieldName: "111"
+    fieldType: TEXT
+
+  # ── Correspondence Address ───────────────────────────────────────────────────
+  addressLine1:
+    investorFieldPath: correspondenceAddress.line1
+    pdfFieldName: "8"
+    fieldType: TEXT
+
+  addressLine2:
+    investorFieldPath: correspondenceAddress.line2
+    pdfFieldName: "9"
+    fieldType: TEXT
+
+  city:
+    investorFieldPath: correspondenceAddress.city
+    pdfFieldName: "2000"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  pinCode:
+    investorFieldPath: correspondenceAddress.pinCode
+    pdfFieldName: "2001"
+    fieldType: TEXT
+
+  state:
+    investorFieldPath: correspondenceAddress.state
+    pdfFieldName: "2002"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  stdCode:
+    investorFieldPath: stdCode
+    pdfFieldName: "20046"
+    fieldType: TEXT
+
+  officePhone:
+    investorFieldPath: officePhone
+    pdfFieldName: "2006"
+    fieldType: TEXT
+
+  mobile:
+    investorFieldPath: mobile
+    pdfFieldName: "2004"
+    fieldType: TEXT
+
+  email:
+    investorFieldPath: email
+    pdfFieldName: "2003"
+    fieldType: TEXT
+
+  # ── Joint Applicant 1 ────────────────────────────────────────────────────────
+  joint1Name:
+    investorFieldPath: "jointApplicants[0].firstName"
+    pdfFieldName: "20031"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  joint1Pan:
+    investorFieldPath: "jointApplicants[0].pan"
+    pdfFieldName: "20041"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  joint1GenderMale:
+    investorFieldPath: "jointApplicants[0].gender"
+    pdfFieldName: "Check Box871"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "MALE"
+
+  joint1GenderFemale:
+    investorFieldPath: "jointApplicants[0].gender"
+    pdfFieldName: "Check Box891"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "FEMALE"
+
+  # ── Joint Applicant 2 ────────────────────────────────────────────────────────
+  joint2Name:
+    investorFieldPath: "jointApplicants[1].firstName"
+    pdfFieldName: "20032"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  joint2Pan:
+    investorFieldPath: "jointApplicants[1].pan"
+    pdfFieldName: "20042"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  joint2GenderMale:
+    investorFieldPath: "jointApplicants[1].gender"
+    pdfFieldName: "Check Box87p"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "MALE"
+
+  joint2GenderFemale:
+    investorFieldPath: "jointApplicants[1].gender"
+    pdfFieldName: "Check Box88o"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "FEMALE"
+
+  # ── Mode of Holding ──────────────────────────────────────────────────────────
+  holdingSingle:
+    investorFieldPath: modeOfHolding
+    pdfFieldName: "Check Box3"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "SINGLE"
+
+  holdingJoint:
+    investorFieldPath: modeOfHolding
+    pdfFieldName: "Check Box4"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "JOINT"
+
+  holdingAnyone:
+    investorFieldPath: modeOfHolding
+    pdfFieldName: "Check Box5"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "ANYONE_OR_SURVIVOR"
+
+  # ── Bank Details ─────────────────────────────────────────────────────────────
+  bankName:
+    investorFieldPath: bankDetails.bankName
+    pdfFieldName: "Text33a"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  accountNumber:
+    investorFieldPath: bankDetails.accountNumber
+    pdfFieldName: "Text34b"
+    fieldType: TEXT
+
+  ifscCode:
+    investorFieldPath: bankDetails.ifscCode
+    pdfFieldName: "Text39"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  micrCode:
+    investorFieldPath: bankDetails.micrCode
+    pdfFieldName: "Text40"
+    fieldType: TEXT
+
+  branchName:
+    investorFieldPath: bankDetails.branchName
+    pdfFieldName: "Text35c"
+    fieldType: TEXT
+
+  # Account Type: 186=Savings, 187=Current, 188=NRO, 189=NRE, 190=FCNR
+  accountTypeSavings:
+    investorFieldPath: bankDetails.accountType
+    pdfFieldName: "Check Box186"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "SAVINGS"
+
+  accountTypeCurrent:
+    investorFieldPath: bankDetails.accountType
+    pdfFieldName: "Check Box187"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "CURRENT"
+
+  accountTypeNro:
+    investorFieldPath: bankDetails.accountType
+    pdfFieldName: "Check Box188"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "NRO"
+
+  accountTypeNre:
+    investorFieldPath: bankDetails.accountType
+    pdfFieldName: "Check Box189"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "NRE"
+
+  accountTypeFcnr:
+    investorFieldPath: bankDetails.accountType
+    pdfFieldName: "Check Box190"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "FCNR"
+
+  # ── Payment Mode ─────────────────────────────────────────────────────────────
+  paymentCheque:
+    investorFieldPath: paymentDetails.paymentMode
+    pdfFieldName: "Check Box10"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "CHEQUE"
+
+  paymentDd:
+    investorFieldPath: paymentDetails.paymentMode
+    pdfFieldName: "Check Box11"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "DD"
+
+  paymentNeft:
+    investorFieldPath: paymentDetails.paymentMode
+    pdfFieldName: "Check Box12"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "NEFT"
+
+  paymentRtgs:
+    investorFieldPath: paymentDetails.paymentMode
+    pdfFieldName: "Check Box13"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "RTGS"
+
+  paymentUpi:
+    investorFieldPath: paymentDetails.paymentMode
+    pdfFieldName: "Check Box14"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "UPI"
+
+  # ── Payment Details (acknowledgement slip fields) ─────────────────────────────
+  chequeOrDdNumber:
+    investorFieldPath: paymentDetails.chequeOrDdNumber
+    pdfFieldName: "Text32"
+    fieldType: TEXT
+
+  chequeOrDdDate:
+    investorFieldPath: paymentDetails.chequeOrDdDate
+    pdfFieldName: "Text33"
+    fieldType: TEXT
+    formatter: DATE_DD_MM_YYYY
+
+  amount:
+    investorFieldPath: paymentDetails.amount
+    pdfFieldName: "Text34"
+    fieldType: AMOUNT
+    formatter: AMOUNT_IN_FIGURES
+
+  # ── Scheme (acknowledgement slip only — Section 5 scheme is pre-filled in template) ──
+  # Text52a is Section 6 "Switch Upon Maturity" scheme field — do not fill with investment scheme.
+  schemeNameAck:
+    investorFieldPath: investmentDetails.schemeName
+    pdfFieldName: "Text35"
+    fieldType: TEXT
+
+  # ── Unit Holding Option ───────────────────────────────────────────────────────
+  unitHoldingPhysical:
+    investorFieldPath: unitHoldingOption
+    pdfFieldName: "Check Box20"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "PHYSICAL"
+
+  unitHoldingDemat:
+    investorFieldPath: unitHoldingOption
+    pdfFieldName: "Check Box21"
+    fieldType: CHECKBOX
+    checkboxTrueValue: "DEMAT"
+
+  # ── Nominee 1 ─────────────────────────────────────────────────────────────────
+  nominee1Name:
+    investorFieldPath: "nominees[0].nomineeName"
+    pdfFieldName: "Text57"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  nominee1Allocation:
+    investorFieldPath: "nominees[0].allocationPercentage"
+    pdfFieldName: "Text67"
+    fieldType: TEXT
+
+  nominee1Guardian:
+    investorFieldPath: "nominees[0].guardianName"
+    pdfFieldName: "Text62"
+    fieldType: TEXT
+
+  # ── Nominee 2 ─────────────────────────────────────────────────────────────────
+  nominee2Name:
+    investorFieldPath: "nominees[1].nomineeName"
+    pdfFieldName: "Text58"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  nominee2Allocation:
+    investorFieldPath: "nominees[1].allocationPercentage"
+    pdfFieldName: "Text68"
+    fieldType: TEXT
+
+  nominee2Guardian:
+    investorFieldPath: "nominees[1].guardianName"
+    pdfFieldName: "Text63"
+    fieldType: TEXT
+
+  # ── Nominee 3 ─────────────────────────────────────────────────────────────────
+  nominee3Name:
+    investorFieldPath: "nominees[2].nomineeName"
+    pdfFieldName: "Text59"
+    fieldType: TEXT
+    formatter: UPPER_CASE
+
+  nominee3Allocation:
+    investorFieldPath: "nominees[2].allocationPercentage"
+    pdfFieldName: "Text69"
+    fieldType: TEXT
+
+  nominee3Guardian:
+    investorFieldPath: "nominees[2].guardianName"
+    pdfFieldName: "Text64"
+    fieldType: TEXT
